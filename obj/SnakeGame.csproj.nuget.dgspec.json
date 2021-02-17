@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Visual Studio Projects\\SnakeGame\\SnakeGame\\SnakeGame.csproj": {}
+  },
+  "projects": {
+    "E:\\Visual Studio Projects\\SnakeGame\\SnakeGame\\SnakeGame.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Visual Studio Projects\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+        "projectName": "SnakeGame",
+        "projectPath": "E:\\Visual Studio Projects\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+        "packagesPath": "C:\\Users\\Xarkies\\.nuget\\packages\\",
+        "outputPath": "E:\\Visual Studio Projects\\SnakeGame\\SnakeGame\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Xarkies\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -11,8 +11,10 @@ namespace SnakeGame
 
         private static void startGame()
         {
-            int[] xAxis = new int[30];
-            int[] yAxis = new int[30];
+            // Defines how big the snake can get
+            // Collecting an apple, adds to the axis +1 value
+            int[] xAxis = new int[100];
+            int[] yAxis = new int[100];
 
             xAxis[0] = 15;
             yAxis[0] = 10;
@@ -29,7 +31,7 @@ namespace SnakeGame
 
             int collectedApples = 0;
             int points = 0;
-            string answer;
+
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Use the Arrow keys to play the game! Good luck! (press any key to continue)");
             Console.ReadKey();
@@ -47,13 +49,14 @@ namespace SnakeGame
             do
             {
                 System.Threading.Thread.Sleep(speed);
-
+                // Listening to user input
                 if (Console.KeyAvailable)
                 {
                     userInputKey = Console.ReadKey().Key;
                 }
 
-                // Listens to tuser input
+                // Depending on the key pressed, update the x and y arrays, which will later be used to 
+                // update where the snake will be drawn
                 switch (userInputKey)
                 {
                     case ConsoleKey.UpArrow:
@@ -97,7 +100,7 @@ namespace SnakeGame
             Console.WriteLine("Do you wish to continue? y/n");
 
             // Checks if user wants to continue the game or not
-            answer = Console.ReadLine();
+            string answer = Console.ReadLine();
             if (answer == "y" || answer == "Y")
             {
                 Console.Clear();
@@ -112,12 +115,14 @@ namespace SnakeGame
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("O");
 
+            // Depending on the apples collected, it will add the corresponding amount of "o" to the end of the body of the snake
             for (int i = 1; i < collectedApples + 1; i++)
             {
                 Console.SetCursorPosition(xAxis[i], yAxis[i]);
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("o");
 
+                // In case the user, hits a part of its own body, the game ends
                 if (xAxis[i] == xAxis[0] && yAxis[i] == yAxis[0])
                     isAlive = false;
             }
@@ -138,11 +143,14 @@ namespace SnakeGame
 
         private static void apple(int xAxisApple, int yAxisApple, out int xAxisApple2, out int yAxisApple2, int speed, out int speed2, int collectedApples, out int collectedApples2, int points, out int points2, Random applePosition, out Random applePosition2)
         {
+            // Assign a random position to an Apple
             xAxisApple = applePosition.Next(3, 49);
             yAxisApple = applePosition.Next(3, 19);
 
+            // Sets the crusor position, to match the previously generated x and y coordinates for the apple
             Console.SetCursorPosition(xAxisApple, yAxisApple);
             Console.ForegroundColor = ConsoleColor.Red;
+            // Character used to represent an apple
             Console.WriteLine((Char)243);
             Console.ForegroundColor = ConsoleColor.Yellow;
             speed -= 10;
@@ -158,7 +166,7 @@ namespace SnakeGame
         }
 
         private static void wallHit(bool isAlive, int xAxis, int yAxis, out bool isAlive2, out int xAxis2, out int yAxis2)
-        {
+        {     
             if (xAxis == 1 || yAxis == 1 || xAxis == 51 || yAxis == 20)
                 isAlive = false;
 

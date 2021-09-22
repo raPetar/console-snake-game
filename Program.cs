@@ -22,7 +22,7 @@ namespace SnakeGame
             bool isAlive = true;
             Console.CursorVisible = false;
 
-            // Sets the movement speed of the snake
+            // Sets the movement speed of the snake, used as an value for Thread.Sleep
             int speed = 150;
 
             Random applePosition = new Random();
@@ -36,6 +36,8 @@ namespace SnakeGame
             Console.WriteLine("Use the Arrow keys to play the game! Good luck! (press any key to continue)");
             Console.ReadKey();
             Console.Clear();
+
+            // Generates the walls within the snake will move
             createBoundaries();
 
             // Generates the snake starting position

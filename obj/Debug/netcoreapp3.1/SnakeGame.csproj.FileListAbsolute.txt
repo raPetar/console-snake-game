@@ -11,3 +11,16 @@ E:\Visual Studio Projects\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.
 E:\Visual Studio Projects\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
 E:\Visual Studio Projects\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
 E:\Visual Studio Projects\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
+D:\GitHubRepo\console-snake-game\bin\Debug\netcoreapp3.1\SnakeGame.exe
+D:\GitHubRepo\console-snake-game\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
+D:\GitHubRepo\console-snake-game\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
+D:\GitHubRepo\console-snake-game\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.dev.json
+D:\GitHubRepo\console-snake-game\bin\Debug\netcoreapp3.1\SnakeGame.dll
+D:\GitHubRepo\console-snake-game\bin\Debug\netcoreapp3.1\SnakeGame.pdb
+D:\GitHubRepo\console-snake-game\obj\Debug\netcoreapp3.1\SnakeGame.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHubRepo\console-snake-game\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
+D:\GitHubRepo\console-snake-game\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfo.cs
+D:\GitHubRepo\console-snake-game\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
+D:\GitHubRepo\console-snake-game\obj\Debug\netcoreapp3.1\SnakeGame.dll
+D:\GitHubRepo\console-snake-game\obj\Debug\netcoreapp3.1\SnakeGame.pdb
+D:\GitHubRepo\console-snake-game\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache

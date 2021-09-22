@@ -6,7 +6,11 @@ namespace SnakeGame
     {
         static void Main(string[] args)
         {
-        begining:
+            startGame();
+        }
+
+        private static void startGame()
+        {
             int[] xAxis = new int[30];
             int[] yAxis = new int[30];
 
@@ -26,7 +30,7 @@ namespace SnakeGame
             int collectedApples = 0;
             int points = 0;
             string answer;
-
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Use the Arrow keys to play the game! Good luck! (press any key to continue)");
             Console.ReadKey();
             Console.Clear();
@@ -39,71 +43,67 @@ namespace SnakeGame
             apple(xAxisApple, yAxisApple, out xAxisApple, out yAxisApple, speed, out speed, collectedApples, out collectedApples, points, out points, applePosition, out applePosition);
 
             ConsoleKey userInputKey = Console.ReadKey().Key;
+
             do
             {
-                do
+                System.Threading.Thread.Sleep(speed);
+
+                if (Console.KeyAvailable)
                 {
-                    System.Threading.Thread.Sleep(speed);
-
-                    if (Console.KeyAvailable)
-                    {
-                        userInputKey = Console.ReadKey().Key;
-                    }
-
-                    // Listens to tuser input
-                    switch (userInputKey)
-                    {
-                        case ConsoleKey.UpArrow:
-                            Console.SetCursorPosition(xAxis[0], yAxis[0]);
-                            Console.WriteLine(" ");
-                            yAxis[0]--;
-                            break;
-                        case ConsoleKey.DownArrow:
-                            Console.SetCursorPosition(xAxis[0], yAxis[0]);
-                            Console.WriteLine(" ");
-                            yAxis[0]++;
-                            break;
-                        case ConsoleKey.RightArrow:
-                            Console.SetCursorPosition(xAxis[0], yAxis[0]);
-                            Console.WriteLine(" ");
-                            xAxis[0]++;
-                            break;
-                        case ConsoleKey.LeftArrow:
-                            Console.SetCursorPosition(xAxis[0], yAxis[0]);
-                            Console.WriteLine(" ");
-                            xAxis[0]--;
-                            break;
-                    }
-                    if (xAxis[0] == xAxisApple && yAxis[0] == yAxisApple)
-                    {
-                        // Generates a new apple at a random location if collected
-                        apple(xAxisApple, yAxisApple, out xAxisApple, out yAxisApple, speed, out speed, collectedApples, out collectedApples, points, out points, applePosition, out applePosition);
-                    }
-
-                    // Updates snake position
-                    snakePosition(xAxis, yAxis, out xAxis, out yAxis, collectedApples, isAlive, out isAlive);
-
-                    // Checks if the snake hit a wall or not
-                    wallHit(isAlive, xAxis[0], yAxis[0], out isAlive, out xAxis[0], out yAxis[0]);
+                    userInputKey = Console.ReadKey().Key;
                 }
-                while (isAlive == true);
 
-                Console.SetCursorPosition(10, 5);
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("You have lost! Total points collected: {0}", points);
-                Console.WriteLine("Do you wish to continue? y/n");
-            
-                // Checks if user wants to continue the game or not
-                answer = Console.ReadLine();
-                if (answer == "y" || answer == "Y")
+                // Listens to tuser input
+                switch (userInputKey)
                 {
-                    Console.Clear();
-                    isAlive = true;
-                    goto begining;
+                    case ConsoleKey.UpArrow:
+                        Console.SetCursorPosition(xAxis[0], yAxis[0]);
+                        Console.WriteLine(" ");
+                        yAxis[0]--;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        Console.SetCursorPosition(xAxis[0], yAxis[0]);
+                        Console.WriteLine(" ");
+                        yAxis[0]++;
+                        break;
+                    case ConsoleKey.RightArrow:
+                        Console.SetCursorPosition(xAxis[0], yAxis[0]);
+                        Console.WriteLine(" ");
+                        xAxis[0]++;
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        Console.SetCursorPosition(xAxis[0], yAxis[0]);
+                        Console.WriteLine(" ");
+                        xAxis[0]--;
+                        break;
                 }
-                else
-                    break;
-            } while (true);
+                if (xAxis[0] == xAxisApple && yAxis[0] == yAxisApple)
+                {
+                    // Generates a new apple at a random location if collected
+                    apple(xAxisApple, yAxisApple, out xAxisApple, out yAxisApple, speed, out speed, collectedApples, out collectedApples, points, out points, applePosition, out applePosition);
+                }
+
+                // Updates snake position
+                snakePosition(xAxis, yAxis, out xAxis, out yAxis, collectedApples, isAlive, out isAlive);
+
+                // Checks if the snake hit a wall or not
+                wallHit(isAlive, xAxis[0], yAxis[0], out isAlive, out xAxis[0], out yAxis[0]);
+            }
+            while (isAlive == true);
+
+            Console.SetCursorPosition(10, 5);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("You have lost! Total points collected: {0}", points);
+            Console.WriteLine("Do you wish to continue? y/n");
+
+            // Checks if user wants to continue the game or not
+            answer = Console.ReadLine();
+            if (answer == "y" || answer == "Y")
+            {
+                Console.Clear();
+                startGame();
+            }
+
         }
 
         private static void snakePosition(int[] xAxis, int[] yAxis, out int[] xAxis2, out int[] yAxis2, int collectedApples, bool isAlive, out bool isAlive2)
@@ -138,12 +138,13 @@ namespace SnakeGame
 
         private static void apple(int xAxisApple, int yAxisApple, out int xAxisApple2, out int yAxisApple2, int speed, out int speed2, int collectedApples, out int collectedApples2, int points, out int points2, Random applePosition, out Random applePosition2)
         {
-            xAxisApple = applePosition.Next(3, 19);
+            xAxisApple = applePosition.Next(3, 49);
             yAxisApple = applePosition.Next(3, 19);
 
             Console.SetCursorPosition(xAxisApple, yAxisApple);
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine((Char)243);
-
+            Console.ForegroundColor = ConsoleColor.Yellow;
             speed -= 10;
             points += 20;
             collectedApples++;

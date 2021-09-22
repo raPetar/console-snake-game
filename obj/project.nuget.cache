@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qOC645I8NDyfKyfDwhV4VNyFhynRa12o2Jxvur2UrMdV+tEywDhtKUcAXxyI2OakwsFVjloAb6RAVkiYVDGMfA==",
+  "dgSpecHash": "E13i2adrSOaEf6j4rnL6BWpZgcGC3Y94r3YaudJhdNybTvCN4eR/mWIOSlRlIm5ikn23MTYRrIgX5cX9Oj+LSg==",
   "success": true,
-  "projectFilePath": "E:\\Visual Studio Projects\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+  "projectFilePath": "D:\\GitHubRepo\\console-snake-game\\SnakeGame.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
